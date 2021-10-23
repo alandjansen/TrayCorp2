@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrayCorpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PRODUTO">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_NOME" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="PROD_ESTOQUE" Type="Int32" />
+    <Property Name="PROD_VALOR" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="TrayCorpEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TrayCorpModelStoreContainer" CdmEntityContainer="TrayCorpEntities">
+    <EntitySetMapping Name="PRODUTO">
+      <EntityTypeMapping TypeName="TrayCorpModel.PRODUTO">
+        <MappingFragment StoreEntitySet="PRODUTO">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NOME" ColumnName="PROD_NOME" />
+          <ScalarProperty Name="PROD_ESTOQUE" ColumnName="PROD_ESTOQUE" />
+          <ScalarProperty Name="PROD_VALOR" ColumnName="PROD_VALOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

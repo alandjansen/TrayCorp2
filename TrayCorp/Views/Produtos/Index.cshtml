@@ -1,0 +1,44 @@
+﻿@model List<TrayCorp.Models.ProdutoViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>Produtos</h2>
+<p>
+    @Html.ActionLink("Incluir Novo Produto", "Create", "Produtos", new { @class = "btn btn-success" })
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Procurar por nome: @Html.TextBox("SearchString")
+        <input type="submit" value="Procurar" />
+    </p>
+}
+
+<table class="table">
+
+    <tr>
+        <th>@Html.ActionLink("ID do produto", "Index", new { sortOrder = "PROD_ID" }) </th>
+        <th>@Html.ActionLink("Nome do produto", "Index", new { sortOrder = "PROD_NOME" }) </th>
+        <th>@Html.DisplayNameFor(model => model[0].PROD_ESTOQUE)</th>
+        <th>@Html.DisplayNameFor(model => model[0].PROD_VALOR)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.PROD_ID)</td>
+            <td>@Html.DisplayFor(modelItem => item.PROD_NOME)</td>
+            <td>@Html.DisplayFor(modelItem => item.PROD_ESTOQUE)</td>
+            <td>@Html.DisplayFor(modelItem => item.PROD_VALOR)</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.PROD_ID }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.PROD_ID }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.PROD_ID })
+            </td>
+        </tr>
+    }
+</table>

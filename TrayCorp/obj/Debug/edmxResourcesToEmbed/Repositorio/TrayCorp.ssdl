@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TrayCorpModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PRODUTO">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+    </Key>
+    <Property Name="PROD_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROD_NOME" Type="nvarchar" MaxLength="40" />
+    <Property Name="PROD_ESTOQUE" Type="int" />
+    <Property Name="PROD_VALOR" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="TrayCorpModelStoreContainer">
+    <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
